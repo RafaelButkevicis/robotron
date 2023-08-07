@@ -53,6 +53,29 @@ const pecas = {
 }
 const estatisticas = document.querySelectorAll("[data-estatisticas]")
 const controle = document.querySelectorAll("[data-controle]")
+const images= [
+    "img/amarelo.png",
+    "img/rosa.png",
+    "img/vermelho.png",
+    "img/preto.png",
+    "img/azul.png",
+    "img/branco.png"
+]
+const changeButton = document.querySelector("[data-mudar]")
+const randomImage = document.querySelector("[data-img]")
+const imageContainer = document.querySelector("[data-container]")
+
+changeButton.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const randomImageUrl = images[randomIndex];
+    randomImage.src = randomImageUrl;
+  });
+
+  window.addEventListener("load", () => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const randomImageUrl = images[randomIndex];
+    randomImage.src = randomImageUrl;
+  });
 
 
 controle.forEach((elemento) => {
